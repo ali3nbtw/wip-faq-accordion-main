@@ -12,13 +12,12 @@
 header {
 	display: flex;
 	align-items: center;
-	margin-bottom: 20px;
 }
 .icon-star {
 	height: 30px;
 }
 h1 {
-	padding-left: 10px;
+	padding-left: 20px;
 	color: hsl(292, 42%, 14%);
 }
 body {
@@ -29,7 +28,14 @@ body {
 	flex-direction: column;
 	background-color: hsl(275, 100%, 97%);
 }
-.background-image {
+.background-image-desktop {
+	display: none;
+	z-index: -1;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.background-image-mobile {
 	z-index: -1;
 	position: absolute;
 	top: 0;
@@ -52,6 +58,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	gap: 20px;
+	padding-top: 10px;
 }
 p {
 	display: none;
@@ -63,10 +70,10 @@ p {
 }
 h2 {
 	color: hsl(292, 42%, 14%);
-	font-size: 1.2rem;
+	font-size: 1.1rem;
 }
 .upper-border {
-	border-top: 2px solid #eeeeee;
+	border-top: 2px solid #eeeeeeae;
 }
 .h2-box {
 	height: 100%;
@@ -74,13 +81,25 @@ h2 {
 	width: 100%;
 	display: flex;
 	align-items: center;
-	padding: 5px;
+	justify-content: space-between;
+	gap: 20px;
 }
-.icon-plus {
-	margin-right: auto;
+.align-center {
+	align-self: center;
+}
+/* have to be at the end */
+.icon-minus {
+	display: none;
 }
 
-/* have to be at the end */
-.viev-element {
-	display: none;
+@media screen and (min-width: 800px) {
+	.container {
+		width: 70%;
+	}
+	.background-image-mobile {
+		display: none;
+	}
+	.background-image-desktop {
+		display: block;
+	}
 }
